@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(window).on('load', function() {
 	var $menu = $('.list button');
 		$('#div2, #div3').css('display','none');
 		$('#load').fadeOut('slow');
