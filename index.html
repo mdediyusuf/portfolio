@@ -9,8 +9,9 @@
 	<script src="lib/jquery.min.js"></script>
 </head>
 <body class="is-loaded">
+	<div id="load" class="back-loading"><div id="load" class="loading"></div></div>
 <header class="header g-container">
-	<img src="logo.svg">
+	<img class="logo" src="logo.svg">
 	<nav class="header-navigation">
 		<ul>
 			<li><a href="#">About</a></li>
@@ -19,20 +20,31 @@
 		</ul>
 	</nav>
 	<section class="header-content g-content">
-		<h1 class="header-title g-title">Halo,<br>Nama Saya Deka</h1>
+		<h1 class="header-title g-title">Halo,<br>Saya Deka</h1>
 	</section>
 </header>
 <main class="main">
 	<section class="profile g-section">
 		<article class="profile-content g-content">
-			<div class="">
-				<h2 class="profile-headline-title g-title">About Me</h2>
+			<h1 class="header-first g-title">Profil Pribadi</h1>
+			<div class="about-me">
+				<div class="photo-content">
+					<img class="photo-profile" src="photo/foto.jpg">
+				</div>
+				<div class="about-content">
+					<h2 class="profile-headline-title g-title">Tentang Saya</h2>
+					<p class="about-text">
+						Halo, Nama saya Deka Galang Permadi. Saya seorang Web Developer Back-End dan Front-End, berfokus pada Desain Interface, Pengembangan Web dan Desain Web Responsif.<br><br>
+						Saya mahasiswa Fresh Graduate dari kampus LP3I Collage Kediri yang ingin memposisikan diri sebagai full stack web developer. Tak hanya web developer, saya juga menyukai desain grafis yang menggunakan Adobe Photoshop dan Illustrator.
+					</p>
+				</div>
 			</div>
 			<div class="profile-headline g-headline">
-				<h3 class="profile-headline-skill g-skill">My Skills</h3>
+				<h3 class="profile-headline-skill g-skill">Kemampuan</h3>
 				<ul class="list">
 					<button id="menu1" class="button show active" target="1">Front-End</button>
 					<button id="menu2" class="button show" target="2">Back-End</button>
+					<button id="menu3" class="button show" target="3">Desain</button>
 				</ul>
 				<div class="grup">
 					<div id="div1" class="target">
@@ -41,7 +53,7 @@
 								<i class="fa fa-html5" aria-hidden="true"></i>
 							</div>
 							<div class="text1">
-								Pertama
+								<p class="skill">HTML5</p>
 							</div>
 						</div>
 						<div class="item1">
@@ -49,7 +61,7 @@
 								<i class="fa fa-css3" aria-hidden="true"></i>
 							</div>
 							<div class="text1">
-								Pertama
+								<p class="skill">CSS3</p>
 							</div>
 						</div>
 						<div class="item1">
@@ -57,7 +69,7 @@
 								<i class="icon-jquery"></i>
 							</div>
 							<div class="text1">
-								Pertama
+								<p class="skill">Jquery</p>
 							</div>
 						</div>
 					</div>
@@ -134,8 +146,31 @@
 							</div>
 						</div>
 					</div>
+					<div id="div3" class="target">
+						<div class="item3">
+							<div class="circle">
+								<img style="height: 5em; top: 3px;" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0ODUgNDg1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0ODUgNDg1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8cGF0aCBkPSJNMzIxLjI3LDMyOC40MTRjLTE2LjI2OSwwLTM3LjA4Mi03LjI1Mi00Ny4xNzMtMTMuMzA3bC05Ljc0MywzOS4xOTZjMTMuMzA3LDcuMjUyLDMzLjg2NiwxMi4yOTksNTYuOTE2LDEyLjI5OSAgIGM1MC4zNjEsMCw3Ni4zNzYtMjQuMTI0LDc2LjM3Ni01Ny4wMTJjLTAuMzc5LTI1Ljg5MS0xNC40MTItNDIuODg3LTQ3LjkzMi01NC4zMzNjLTIxLjUzNy03LjYzMS0yOC4zMTgtMTEuOTUyLTI4LjMxOC0yMC4yMTMgICBjMC04Ljk4OCw3LjUwNi0xNC40MTIsMjAuODEzLTE0LjQxMmMxNS4xMzYsMCwzMC4xNzcsNS44MDMsMzguMTg1LDEwLjEyMmw5LjcxNC0zNy44MzljLTEwLjgxNy01LjQyNC0yOS4xNjgtMTAuMDkxLTQ5Ljc2LTEwLjA5MSAgIGMtNDMuNTgsMC03MS42NzYsMjQuODgtNzEuNjc2LDU3LjY0NGMtMC4zNzksMjAuOTM4LDEzLjY1NSw0MC43NzQsNTAuMTM5LDUyLjk3NmMyMC40MzIsNi45MDYsMjUuODU2LDExLjE5NCwyNS44NTYsMjAuMTgyICAgQzM0NC42NjgsMzIyLjY0NCwzMzcuNzYyLDMyOC40MTQsMzIxLjI3LDMyOC40MTR6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8cGF0aCBkPSJNMTQxLjY4NywyNzYuMTk0YzUuMDQ1LDAuNzI2LDExLjU3MywwLjk3OCwxOC42OTgsMC45NzhjMzIuNDE3LDAsNjAuMjMtNy44ODMsNzguODM0LTI1LjQ3OSAgIGMxNC41MzktMTMuNjg2LDIyLjQyLTMzLjg5OSwyMi40Mi01Ny42NDNjMC0yMy43NzctMTAuMzQzLTQzLjk5LTI1Ljk4My01Ni4xOTRjLTE2LjE0Ni0xMy4wNTUtNDAuMjY4LTE5LjQ1Ni03NC4xNjctMTkuNDU2ICAgYy0zMy40ODksMC01Ny4yNjQsMi4yMS03NC4xMzYsNS4wNDZ2MjM5LjU5M2g1NC4zMzNWMjc2LjE5NHogTTE0MS43ODIsMTYyLjAxMmMzLjg0Ny0xLjEwNSwxMS40NzktMi4yMDksMjIuNTQ3LTIuMjA5ICAgYzI3LjQ2NSwwLDQyLjg4NSwxMy4yNzYsNDMuMDEsMzUuNTcyYzAsMjQuOTExLTE4LjEzMiwzOS42NjktNDcuMywzOS42NjljLTcuODg0LDAtMTMuNTU5LTAuMzQ2LTE4LjI1Ny0xLjM1N1YxNjIuMDEyeiIgZmlsbD0iIzAwMDAwMCIvPgoJPHBhdGggZD0iTTAsMHY0ODVoNDg1VjBIMHogTTQ1NSw0NTVIMzBWMzBoNDI1VjQ1NXoiIGZpbGw9IiMwMDAwMDAiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+							</div>
+							<div class="text1">
+								Photoshop
+							</div>
+						</div>
+						<div class="item3">
+							<div class="circle">
+								<img style="height: 5em; top: 3px;" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0ODUgNDg1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0ODUgNDg1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8cGF0aCBkPSJNMTY4LjQwNCwzMDUuNDg2aDY4LjE5MmwxOC40MjgsNjEuMTE1aDU3Ljg4N2wtNzMuODg1LTIzOC4zMTJoLTcwLjYyMUw5NS40NTUsMzY2LjYwMWg1NS44NzVMMTY4LjQwNCwzMDUuNDg2eiAgICBNMjAxLjE5OSwxNjguNTQ2aDAuNjkzYzMuNTA1LDE0LjI2NCwyNi45NjYsOTYuNTQ1LDI2Ljk2Niw5Ni41NDVoLTUyLjc1QzE3Ni4xMDgsMjY1LjA5MSwxOTcuNjU4LDE4Mi44MSwyMDEuMTk5LDE2OC41NDZ6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8cmVjdCB4PSIzMzMuOTUiIHk9IjE5My43NzUiIHdpZHRoPSI1My44MjQiIGhlaWdodD0iMTcyLjgyNiIgZmlsbD0iIzAwMDAwMCIvPgoJPHBhdGggZD0iTTM2MC41MzMsMTcyLjUwM2MxNy43NjksMCwyOS4wMTItMTIuMDc4LDI5LjAxMi0yNi44NmMtMC40MTUtMTUuNTgzLTExLjI0My0yNy4yNDQtMjguNTk1LTI3LjI0NCAgIGMtMTcuMzUyLDAtMjguNzM1LDExLjY2LTI4LjM1MywyNy4yNDRDMzMyLjIxNSwxNjAuNDI1LDM0My41OTgsMTcyLjUwMywzNjAuNTMzLDE3Mi41MDN6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8cGF0aCBkPSJNMCwwdjQ4NWg0ODVWMEgweiBNNDU1LDQ1NUgzMFYzMGg0MjVWNDU1eiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+							</div>
+							<div class="text1">
+								Illustrator
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+		</article>
+	</section>
+	<section class="work g-section">
+		<article class="work-content g-content">
+			<h1 class="header-first g-title">Proyek</h1>
 		</article>
 	</section>
 </main>

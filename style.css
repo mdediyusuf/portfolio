@@ -71,13 +71,13 @@
 
 /* Box Model */
 
-	*, *:before, *:after {
+	*, *:before, *:after:not(.loading) {
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 	}
 
-img {
+.logo {
 	width: 50px;
 	position: absolute;
 	top: 50px;
@@ -98,7 +98,7 @@ button {
 .is-loaded {
 	width: auto;
 	position: relative;
-	overflow: visible;
+	overflow: hidden;
 }
 
 .header {
@@ -118,6 +118,34 @@ button {
 	color: #000 !important;
 }
 
+.photo-content {
+	display: inline-block;
+	position: relative;
+	top: 20px;
+}
+
+.photo-profile {
+	border: solid 5px #ddd;
+	height: 300px;
+}
+
+.about-content {
+	position: relative;
+	left: 100px;
+	top: -250px;
+	width: 60%;
+	line-height: 0.6;
+	display: inline-table;
+}
+
+.about-text {
+	position: relative;
+	top: 30px;
+	color: #B5B5B5;
+	font-size: 25px;
+	line-height: 1;
+}
+
 .profile:before {
 	webkit-transform: skewY(-4deg);
 	transform: skewY(-4deg);
@@ -127,14 +155,36 @@ button {
 	background-color: #fff;
 }
 
+.work:before {
+	webkit-transform: skewY(4deg);
+	transform: skewY(4deg);
+}
+
+.work, .work:before {
+	background-color: #666;
+}
+
+.work {
+	color: #fff;
+}
+
+.header-first {
+	margin-bottom: 50px;
+}
+
 .profile-headline-title:first-child {
-	font-size: 60px;
+	font-size: 50px;
 }
 
 .profile-headline-skill:first-child {
-	font-size: 40px;
+	margin-top: 20px;
+	font-size: 50px;
 	text-align: center;
 	color: #000;
+}
+
+.work-content {
+
 }
 
 .g-container {
@@ -161,6 +211,11 @@ button {
 	content: "";
 }
 
+.g-section {
+	position: relative;
+	padding-bottom: 8%;
+}
+
 .g-headline {
 	margin-bottom: 5%;
 	position: relative;
@@ -184,15 +239,22 @@ button {
 	position: relative;
 }
 
-.button {
-	width: 11em;
-	border: solid 1px #000 !important;
+.button:first-child {
+	
+	border: solid 1px #000;
 	border-radius: 3px 0 0 3px;
 }
 
-.button:last-child {
-	border-left: none !important;
+.button:nth-child(n+2):nth-last-child(n+2) {
+	border: solid 1px #000;
+	border-left: none;
+	border-right: none;
 	transform: translateX(-5px);
+}
+
+.button:last-child {
+	border: solid 1px #000;
+	transform: translateX(-10px);
 	border-radius: 0 3px 3px 0;
 }
 
@@ -237,14 +299,30 @@ button {
 	border: none;
 }
 
+.item3 {
+	width: 50%;
+	border-right: solid 1px #B5B5B5;
+	margin: 30px 0;
+}
+
+.item3:last-child {
+	border: none;
+}
+
 .text1 {
 	margin-top: 30px;
 }
 
+.skill {
+	font-family: "proximanova",Helvetica,Arial,sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+}
+
 .circle {
 	margin: auto;
-	width: 150px;
-	height: 150px;
+	width: 95px;
+	height: 95px;
 	padding: 30px;
 	border: solid 1px #B5B5B5;
 	border-radius: 100%;
@@ -298,7 +376,7 @@ button {
 	position: relative;
 }
 
-svg {
+svg, img {
 	position: relative;
 	
 }
@@ -320,3 +398,84 @@ a {
 	bottom: 16%;
 }
 }
+
+/* Loading */
+.back-loading {
+	position: fixed;
+	background-color: rgba(0, 0, 0, 1);
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+}
+
+.loading,
+.loading::before,
+.loading::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left-color: rgba(255, 255, 255, 0.4);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.loading {
+  margin: -25px 0 0 -25px;
+  height: 50px;
+  width: 50px;
+  -webkit-animation: animation-rotate 1000ms linear infinite;
+  -moz-animation: animation-rotate 1000ms linear infinite;
+  -o-animation: animation-rotate 1000ms linear infinite;
+  animation: animation-rotate 1000ms linear infinite;
+}
+
+.loading::before {
+  content: "";
+  margin: -23px 0 0 -23px;
+  height: 44px;
+  width: 44px;
+  -webkit-animation: animation-rotate 1000ms linear infinite;
+  -moz-animation: animation-rotate 1000ms linear infinite;
+  -o-animation: animation-rotate 1000ms linear infinite;
+  animation: animation-rotate 1000ms linear infinite;
+}
+
+.loading::after {
+  content: "";
+  margin: -29px 0 0 -29px;
+  height: 56px;
+  width: 56px;
+  -webkit-animation: animation-rotate 2000ms linear infinite;
+  -moz-animation: animation-rotate 2000ms linear infinite;
+  -o-animation: animation-rotate 2000ms linear infinite;
+  animation: animation-rotate 2000ms linear infinite;
+}
+
+@-webkit-keyframes animation-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes animation-rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes animation-rotate {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes animation-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading */
