@@ -109,6 +109,15 @@ button {
 	color: #fff;
 }
 
+.skill-title {
+	position: relative;
+	top: -15px;
+	left: 9.5em;
+	letter-spacing: 3px;
+	color: #fff;
+	font-family: 'Saira Semi Condensed', sans-serif;
+}
+
 .main {
 	background-color: #fff;
 	position: relative;
