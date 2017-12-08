@@ -12,7 +12,7 @@
     font-weight: 400;
 }
 
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, textarea {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -69,6 +69,12 @@
 		background: #000;
 	}
 
+	textarea {
+		min-height: 80px;
+		max-height: 160px;
+		resize: vertical;
+	}
+
 /* Box Model */
 
 	*, *:before, *:after:not(.loading) {
@@ -102,11 +108,22 @@ button {
 }
 
 .header {
+	background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("background1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
+.header-fixed {
+	position: fixed;
 }
 
 .header-title {
 	color: #fff;
+}
+
+.scroll {
+	color: #fff;
+	text-decoration: none;
 }
 
 .skill-title {
@@ -138,6 +155,10 @@ button {
 	height: 300px;
 }
 
+.about-me {
+	height: 400px;
+}
+
 .about-content {
 	position: relative;
 	left: 100px;
@@ -164,21 +185,25 @@ button {
 	background-color: #fff;
 }
 
-.work:before {
+.edu:before {
 	webkit-transform: skewY(4deg);
 	transform: skewY(4deg);
 }
 
-.work, .work:before {
+.edu, .edu:before {
 	background-color: #666;
 }
 
-.work {
+.edu {
 	color: #fff;
 }
 
-.header-first {
+.header-first, .header-last {
 	margin-bottom: 50px;
+}
+
+.header-last {
+	color: #fff;
 }
 
 .profile-headline-title:first-child {
@@ -192,8 +217,185 @@ button {
 	color: #000;
 }
 
-.work-content {
+.footer-headline-title {
+	color: #fff;
+}
 
+.line-cover {
+	height: 300px;
+	width: 86%;
+	position: absolute;
+	text-align: center;
+}
+
+.line:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 304px;
+	bottom: 230px;
+	height: 230px;
+	left: 50%;
+	border-left: solid 2px #fff;
+	transform: translate(-50%);
+}
+
+.line-left:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 19em;
+	left: 45%;
+	right: 50%;
+	border-top: solid 2px #fff;
+}
+
+.line-right:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 29em;
+	left: 45%;
+	right: 50%;
+	border-top: solid 2px #fff;
+	transform: translate(100%);
+}
+
+.round:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 530px;
+	bottom: 230px;
+	left: 50%;
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	border-radius: 100%;
+	transform: translate(-50%);
+}
+
+.round-text:after {
+	content: "Sekarang";
+	position: absolute;
+	z-index: 1;
+	top: 550px;
+	bottom: 230px;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.edu-content {
+
+}
+
+.edu-cover {
+	
+}
+
+.edu-text {
+	width: 44%;
+	border-left: solid 2px #fff;
+	transform: translate(-0.1%);
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.16),0 2px 12px 0 rgba(0,0,0,0.12);
+}
+
+.edu-text1 {
+	width: 44%;
+	border-right: solid 2px #fff;
+	transform: translate(126.5%,-30%);
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.16),0 2px 12px 0 rgba(0,0,0,0.12);
+}
+
+.edu-header {
+	padding: 40px 100px;
+}
+
+.footer:before {
+	webkit-transform: skewY(-4deg);
+	transform: skewY(-4deg);
+}
+
+.footer, .footer:before {
+	background-color: #000;
+}
+
+.address {
+	width: 35%;
+	position: relative;
+	margin-right: 60px;
+}
+
+.address-text {
+	margin-bottom: 20px;
+	color: #fff;
+}
+
+.cover-last {
+	position: relative;
+	display: flex;
+}
+
+.form {
+	margin: 0 auto auto 0;
+	padding: 0;
+	text-align: left;
+	position: relative;
+	top: 10px;
+	display: inline;
+}
+
+.form input:not(.send), .form textarea {
+	border-radius: 3px;
+	border: solid 1px #fff;
+	background: transparent;
+	color: #fff;
+}
+
+.form input:focus, .form textarea:focus {
+	
+}
+
+.textbox:first-child {
+	margin-right: 60px;
+}
+
+.textbox {
+	width: calc(100% - 303px);
+	padding: 8px;
+}
+
+.message {
+	padding: 8px;
+	height: 80px;
+	width: 483px;
+	max-height: 108px;
+}
+
+.send {
+	position: absolute;
+	top: 200px;
+	right: 0;
+	padding: 8px 40px;
+	background: #fff;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.g-edu:first-child {
+	font-family: "proximanova-bold",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	letter-spacing: 1px;
+	margin-bottom: 18px;
+}
+
+.g-edu {
+	font-family: "proximanova-bold",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	margin-bottom: 18px;
 }
 
 .g-container {
@@ -369,9 +571,27 @@ button {
 }
 
 .header-navigation {
-	position: absolute;
+	position: fixed;
 	top: 50px;
 	right: 100px;
+	z-index: 9999;
+}
+
+.header-navigation-side {
+	position: fixed;
+	width: 18px;
+	top: 40%;
+	right: 30px;
+	z-index: 9999;
+}
+
+.header-navigation-side a {
+	display: block;
+	margin: 10px 0;
+	width: 15px;
+	height: 15px;
+	background-color: #BFBFBF;
+	border-radius: 20%;
 }
 
 .header-navigation ul li:first-child {
@@ -379,6 +599,17 @@ button {
 }
 .header-navigation ul li {
 	margin-left: 20px;
+}
+
+.designed {
+	position: relative;
+	display: inline;
+	left: 7%;
+	top: 50px;
+}
+
+.designed-text {
+	color: #fff;
 }
 
 #div2 {
@@ -488,3 +719,107 @@ a {
 }
 
 /* Loading */
+
+/* ToolTip */
+[tooltip] {
+  position: relative; /* opinion 1 */
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+  text-transform: none; /* opinion 2 */
+  font-size: .9em; /* opinion 3 */
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+[tooltip]::before {
+  content: '';
+  border: 5px solid transparent; /* opinion 4 */
+  z-index: 1001; /* absurdity 1 */
+}
+[tooltip]::after {
+  content: attr(tooltip); /* magic! */
+  
+  /* most of the rest of this is opinion */
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+  
+  /* 
+    Let the content set the size of the tooltips 
+    but this will also keep them from being obnoxious
+    */
+  min-width: 3em;
+  max-width: 21em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1ch 1.5ch;
+  border-radius: .3ch;
+  box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+  background: #333;
+  color: #fff;
+  z-index: 1000; /* absurdity 2 */
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+  display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+  display: none !important;
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+  to {
+    opacity: .9;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltips-horz {
+  to {
+    opacity: .9;
+    transform: translate(0, -50%);
+  }
+}
+
+/* FX All The Things */ 
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after,
+[tooltip][flow^="down"]:hover::before,
+[tooltip][flow^="down"]:hover::after {
+  animation: tooltips-vert 300ms ease-out forwards;
+}
+
+[tooltip][flow^="left"]:hover::before,
+[tooltip][flow^="left"]:hover::after,
+[tooltip][flow^="right"]:hover::before,
+[tooltip][flow^="right"]:hover::after {
+  animation: tooltips-horz 300ms ease-out forwards;
+}
+
+/* FLOW: LEFT */
+[tooltip][flow^="left"]::before {
+  top: 50%;
+  border-right-width: 0;
+  border-left-color: #333;
+  left: calc(0em - 5px);
+  transform: translate(-.5em, -50%);
+}
+[tooltip][flow^="left"]::after {
+  top: 50%;
+  right: calc(100% + 5px);
+  transform: translate(-.5em, -50%);
+}
