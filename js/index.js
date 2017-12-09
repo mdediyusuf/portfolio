@@ -1,7 +1,4 @@
 $(window).on('load', function() {
-	if ($(this).scrollTop() > 350) {
-		$('.header-navigation-side').css('display','none');
-	}
 	var $menu = $('.list button');
 		$('#div2, #div3').css('display','none');
 		$('#load').fadeOut('slow');

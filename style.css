@@ -366,6 +366,7 @@ button {
 }
 
 .message {
+	position: absolute;
 	padding: 8px;
 	height: 80px;
 	width: 483px;
@@ -579,6 +580,7 @@ button {
 
 .header-navigation-side {
 	position: fixed;
+	display: none;
 	width: 18px;
 	top: 40%;
 	right: 30px;
